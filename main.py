@@ -7,6 +7,15 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
+
+    # create sprite groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    # assign player to containers
+    Player.containers = (updatable, drawable)
+
+    # create player
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     dt = 0  # delta time
 
@@ -16,9 +25,14 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        player.update(dt)
+        # update sprites from updatables
+        updatable.update(dt)
         screen.fill("black")
-        player.draw(screen)
+
+        # draw sprites from drawable group
+        for sprite in drawable:
+            sprite.draw(screen)
+
         pygame.display.flip()
 
         #  limit framerate to 60 FPS and return frame time in seconds
