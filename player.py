@@ -1,7 +1,7 @@
 import pygame
 from circleshape import CircleShape
 from constants import *
-from shot import Shot
+from bullet import Bullet
 
 
 class Player(CircleShape):
@@ -28,7 +28,7 @@ class Player(CircleShape):
         self.position += forward * PLAYER_SPEED * dt
 
     def shoot(self):
-        shot = Shot(self.position.x, self.position.y)
+        bullet = Bullet(self.position.x, self.position.y)
 
     def update(self, dt):
         keys = pygame.key.get_pressed()

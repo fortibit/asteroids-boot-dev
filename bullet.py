@@ -2,9 +2,9 @@ import pygame
 from circleshape import CircleShape
 from constants import *
 
-class Shot(CircleShape):
+class Bullet(CircleShape):
     def __init__(self, x, y):
-        super().__init__(x, y, SHOT_RADIUS)
+        super().__init__(x, y, BULLET_RADIUS)
         #self.radius = SHOT_RADIUS
 
     def draw(self, screen):
