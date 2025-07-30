@@ -7,7 +7,7 @@
 <h4 align="center">A simple Asteroid game using Python and Pygame.</h4>
 
 
-![screenshot](https://imgur.com/a/2qlDckS)
+![screenshot](https://i.imgur.com/MoWSICS.gif)
 
 ## Key Features
 
@@ -37,4 +37,5 @@
 
 > GitHub [@fortibit](https://github.com/fortibit) &nbsp;&middot;&nbsp;
 > LinkedIn [@robertm88](https://www.linkedin.com/in/robertm88/)
+
 
