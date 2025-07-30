@@ -18,25 +18,28 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
 
-    # assign sprites to containers
-    Bullet.containers = (updatable, drawable, bullets)
-    Player.containers = (updatable, drawable)
+    # assign sprites to groups
+    Bullet.containers = (bullets, updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
+    Player.containers = (updatable, drawable)
 
+    # create asteroid field
     asteroid_field = AsteroidField()
 
     # create player
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-    dt = 0  # delta time
 
+    # delta time, controls speed of the game
+    dt = 0  
 
+    # check for quit button click
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
 
-        # update sprites from updatables
+        # update sprites from updatables group
         updatable.update(dt)
 
         # check collision between player and asteroid
@@ -44,6 +47,7 @@ def main():
             if asteroid.check_collision(player):
                 sys.exit("Game over!")
 
+        # add background
         screen.fill("black")
 
         # draw sprites from drawable group
