@@ -50,6 +50,7 @@ def main():
         for sprite in drawable:
             sprite.draw(screen)
 
+        # refresh screen
         pygame.display.flip()
 
         #  limit framerate to 60 FPS and return frame time in seconds
