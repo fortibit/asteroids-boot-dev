@@ -53,8 +53,8 @@ def main():
         # refresh screen
         pygame.display.flip()
 
-        #  limit framerate to 60 FPS and return frame time in seconds
-        dt = clock.tick(60) / 1000 
+        #  limit framerate to FPS and return frame time in seconds
+        dt = clock.tick(FPS) / 1000 
 
 
 if __name__ == "__main__":
