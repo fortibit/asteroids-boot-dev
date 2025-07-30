@@ -25,6 +25,12 @@ class Player(CircleShape):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_SPEED * dt
 
+    def shoot(self):
+        
+            def spawn(self, radius, position, velocity):
+        asteroid = Asteroid(position.x, position.y, radius)
+        asteroid.velocity = velocity
+
     def update(self, dt):
         keys = pygame.key.get_pressed()
 
