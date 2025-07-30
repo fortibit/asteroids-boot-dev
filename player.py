@@ -1,6 +1,8 @@
 import pygame
 from circleshape import CircleShape
 from constants import *
+from shot import Shot
+
 
 class Player(CircleShape):
     def __init__(self, x, y):
@@ -26,23 +28,24 @@ class Player(CircleShape):
         self.position += forward * PLAYER_SPEED * dt
 
     def shoot(self):
-        
-            def spawn(self, radius, position, velocity):
-        asteroid = Asteroid(position.x, position.y, radius)
-        asteroid.velocity = velocity
+        shot = Shot(self.position.x, self.position.y)
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
 
         # left
-        if keys[pygame.K_a]:
+        if keys[pygame.K_LEFT]:
             self.rotate(-dt)
         # right
-        if keys[pygame.K_d]: 
+        if keys[pygame.K_RIGHT]: 
             self.rotate(dt)
         # forward
-        if keys[pygame.K_w]:
+        if keys[pygame.K_UP]:
             self.move(dt)
         # backward
-        if keys[pygame.K_s]:
+        if keys[pygame.K_DOWN]:
             self.move(-dt)
+        # shoot
+        if keys[pygame.K_SPACE]:
+            self.shoot()
+        
