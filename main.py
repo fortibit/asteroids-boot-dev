@@ -47,6 +47,12 @@ def main():
             if asteroid.check_collision(player):
                 sys.exit("Game over!")
 
+            # check if the bullet hit the asteroid and destroy both if True
+            for bullet in bullets:
+                if bullet.check_collision(asteroid):
+                    bullet.kill()
+                    asteroid.kill()
+
         # add background
         screen.fill("black")
 
