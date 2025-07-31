@@ -33,6 +33,8 @@
 - [uv](https://docs.astral.sh/uv/)
 
 
+## Contributing
+
 ---
 
 > GitHub [@fortibit](https://github.com/fortibit) &nbsp;&middot;&nbsp;
